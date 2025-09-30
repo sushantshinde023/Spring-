@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * 2. It is explicitly requested
  * */
 @Component
-@Lazy
+//@Lazy
 public class CricketCoach implements Coach {
 	
 	public CricketCoach() {
