@@ -3,6 +3,9 @@ package com.study.spring_basic.service;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 /*
  * @Component annotation marks the class as spring bean and it marks the bean as available for DI
  * A spring bean is just a regular java class that is managed by Spring
@@ -22,11 +25,21 @@ public class CricketCoach implements Coach {
 	public CricketCoach() {
 		System.out.println("In constructor "+getClass().getSimpleName());// it will not get initialized as we marked it as @Lazy, and TrachCoach is primary
 	}
+	
+	@PostConstruct
+	public void doMyInitalSetup() {
+		System.out.println(" In doMyInitalSetup method - "+getClass().getSimpleName());
+	}
 
 	@Override
 	public String getDailyWorkout() {
 	
 		return "Do net practice for batting for an Hour";
+	}
+	
+	@PreDestroy
+	public void doMyCleanUp() {
+		System.out.println(" in doMyCleanUP - "+getClass().getSimpleName());
 	}
 
 }
