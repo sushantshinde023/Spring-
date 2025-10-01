@@ -1,6 +1,7 @@
 package com.study.spring_basic.service;
 
-import org.springframework.context.annotation.Lazy;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 /*
  * @Component annotation marks the class as spring bean and it marks the bean as available for DI
@@ -10,9 +11,12 @@ import org.springframework.stereotype.Component;
  * The bean will be initialized in following cases
  * 1. It is needed for dependency injection
  * 2. It is explicitly requested
+ * 
+ * @Scope - The default scope is singleton, no need to specify. If we want to specify explicitly @Scope annotation is used
  * */
 @Component
 //@Lazy
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class CricketCoach implements Coach {
 	
 	public CricketCoach() {
