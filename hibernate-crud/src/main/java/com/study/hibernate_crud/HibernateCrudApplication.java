@@ -1,4 +1,4 @@
-package com.study.hibernate_crud.HibernateCrud;
+package com.study.hibernate_crud;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
