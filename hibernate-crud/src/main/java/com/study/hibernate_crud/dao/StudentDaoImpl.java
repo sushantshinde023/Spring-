@@ -8,6 +8,12 @@ import com.study.hibernate_crud.entity.Student;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 
+/*
+ * @Repository : It is sub annotation of @Component. This is applied to DAO Implementation then Spring will automatically register the DAO implementation
+ * 				 Spring will also provides translation of  any JDBC related exceptions with @Repository annotation
+ * @Transactional : This annotation automagically begin and end a transaction for your JPA code.
+ * 
+ * */
 @Repository
 public class StudentDaoImpl implements StudentDao{
 	private EntityManager entityManager;
