@@ -4,4 +4,5 @@ import com.study.hibernate_crud.entity.Student;
 
 public interface StudentDao {
 	void save(Student theStudent);
+	Student findById(Integer id);
 }

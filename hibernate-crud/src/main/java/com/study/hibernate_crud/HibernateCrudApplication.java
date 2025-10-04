@@ -30,8 +30,26 @@ public class HibernateCrudApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDao studentDao) {
 		return runner->{
-			createStudent(studentDao);
+			//createStudent(studentDao);
+			findStudent(studentDao);
 		};
+	}
+
+	private void findStudent(StudentDao studentDao) {
+System.out.println("Creating STudent");
+		
+		Student theStudent=new Student("Sushant","Shinde","sush@gmail.com");
+		
+		//save student object
+		System.out.println("Saving Student object");
+		studentDao.save(theStudent);
+		//display id of saved student
+		System.out.println("Generated id "+theStudent.getId());
+		//Retrieve student based on id
+		Student myStudent=studentDao.findById(theStudent.getId());
+		//Print student
+		System.out.println(myStudent);
+		
 	}
 
 	private void createStudent(StudentDao studentDao) {
