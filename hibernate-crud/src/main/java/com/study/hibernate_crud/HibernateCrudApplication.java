@@ -1,5 +1,7 @@
 package com.study.hibernate_crud;
 
+import java.util.List;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -31,8 +33,18 @@ public class HibernateCrudApplication {
 	public CommandLineRunner commandLineRunner(StudentDao studentDao) {
 		return runner->{
 			//createStudent(studentDao);
-			findStudent(studentDao);
+			//findStudent(studentDao);
+			queryFoeStudents(studentDao);
 		};
+	}
+
+	private void queryFoeStudents(StudentDao studentDao) {
+		List<Student> students=studentDao.findAll();
+		//display students
+		for(Student student:students) {
+			System.out.println(student);
+		}
+		
 	}
 
 	private void findStudent(StudentDao studentDao) {
