@@ -52,4 +52,19 @@
 	  }
 	  
 	- Here JPQL named parameters are prefixed with colon
+
+### Updating Single Object
+
+	- for updating object we will have to find the Object
+	
+		Student theStudent=entityManager.find(Student.class,Integer id);
+		
+	- Then call setter method to update entity
+	
+		theStudent.setFirstName("XYZ");
+		
+	- Then Update entity in DB using merge
+	
+		entityManager.merge(theStudent);
+		
 	

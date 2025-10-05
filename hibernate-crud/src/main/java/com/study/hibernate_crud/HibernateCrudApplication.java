@@ -35,8 +35,21 @@ public class HibernateCrudApplication {
 			//createStudent(studentDao);
 			//findStudent(studentDao);
 			//queryFoeStudents(studentDao);
-			findByLastName(studentDao);
+			//findByLastName(studentDao);
+			updateStudent(studentDao);
 		};
+	}
+
+	private void updateStudent(StudentDao studentDao) {
+		//retrieve student based on primary key
+		int studentId=1;
+		Student theStudent=studentDao.findById(studentId);
+		//change firstName to Scooby
+		theStudent.setFirstName("Scooby");
+		studentDao.update(theStudent);
+		//Display student
+		System.out.println("Updated Student: "+theStudent);
+		
 	}
 
 	private void findByLastName(StudentDao studentDao) {
