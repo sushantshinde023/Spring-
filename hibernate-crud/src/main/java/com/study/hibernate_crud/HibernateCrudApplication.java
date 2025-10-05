@@ -38,7 +38,7 @@ public class HibernateCrudApplication {
 	private void findStudent(StudentDao studentDao) {
 System.out.println("Creating STudent");
 		
-		Student theStudent=new Student("Sushant","Shinde","sush@gmail.com");
+		Student theStudent=new Student("Sush","Shinde","sush@gmail.com");
 		
 		//save student object
 		System.out.println("Saving Student object");
