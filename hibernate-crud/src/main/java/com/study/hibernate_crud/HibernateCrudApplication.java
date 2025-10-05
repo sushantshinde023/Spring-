@@ -34,8 +34,17 @@ public class HibernateCrudApplication {
 		return runner->{
 			//createStudent(studentDao);
 			//findStudent(studentDao);
-			queryFoeStudents(studentDao);
+			//queryFoeStudents(studentDao);
+			findByLastName(studentDao);
 		};
+	}
+
+	private void findByLastName(StudentDao studentDao) {
+		List<Student> students=studentDao.findByLastName("Patil");
+		
+		for(Student tempStudent : students) {
+			System.out.println(tempStudent);
+		}
 	}
 
 	private void queryFoeStudents(StudentDao studentDao) {
