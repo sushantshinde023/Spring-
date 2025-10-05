@@ -85,4 +85,23 @@
 ### Deleting All Students
 
 	   int numOfRowsUpdated = entityManager.createQuery("DELETE FROM Student").executeUpdate();
+	   
+### Creating Database tables with Java Code
+
+	- JPA/Hibernate provides an option to automatically create database tables
+	- Creates tables based  on Java code with JPA/ Hibernate annotations
+	- It is not recommended to use auto generation for enterprise, real time projects
+	- Configuration
+	
+		- application.properties file
+		
+		   spring.jpa.hibernate.ddl-auto=create
+		
+		- With this property when you run your application JPA/Hibernate will drop tables then create them
+		
+		create-drop : if we set property value create-drop DB tables dropped followed by database table creation. On Application 						 						 shutdown  drop DB tables
+		validate : validate the database table schema
+		Update : Update the database tables schema. If we want to create table once and then keep data use update
+		
+		
 	
