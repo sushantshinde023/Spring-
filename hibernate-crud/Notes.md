@@ -67,4 +67,22 @@
 	
 		entityManager.merge(theStudent);
 		
+
+### Deleting an Object
+
+	- for updating object we will have to find the Object
+	
+		Student theStudent=entityManager.find(Student.class,Integer id);
+		
+	- Then delete
+		
+		entityManager.remove(theStudent)
+		
+### Deleting Objects based on condition
+
+	   int numOfRowsUpdated = entityManager.createQuery("DELETE FROM Student WHERE lastName='Patil'").executeUpdate();
+	   
+### Deleting All Students
+
+	   int numOfRowsUpdated = entityManager.createQuery("DELETE FROM Student").executeUpdate();
 	

@@ -36,8 +36,16 @@ public class HibernateCrudApplication {
 			//findStudent(studentDao);
 			//queryFoeStudents(studentDao);
 			//findByLastName(studentDao);
-			updateStudent(studentDao);
+			//updateStudent(studentDao);
+			deleteStudent(studentDao);
 		};
+	}
+
+	private void deleteStudent(StudentDao studentDao) {
+		int studentId=3;
+		System.out.println("Deleting Student with studentId : "+studentId);
+		studentDao.delete(studentId);
+		
 	}
 
 	private void updateStudent(StudentDao studentDao) {
